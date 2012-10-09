@@ -7,7 +7,7 @@
   * @typedef EnsembleDeSommets
   * @brief Représente un ensemble de sommet via une liste chainée
   */
-typedef liste EnsembleDeSommets;
+typedef int* EnsembleDeSommets;
 
 /**
   * @fn int isClique (graphe_l g, EnsembleDeSommets E);
@@ -30,13 +30,13 @@ int isClique (graphe_l g, EnsembleDeSommets E);
 int isMaximale (graphe_l g, EnsembleDeSommets E);
 
 /**
-  * @fn EnsembleDeSommets* getCliqueMaximale (graphe_l g);
+  * @fn EnsembleDeSommets getCliqueMaximale (graphe_l g);
   * @brief Calcule une clique maximale de g.
   *
   * @param g Graphe
   * @return L'ensemble des sommets formant une clique maximale.
   */
-EnsembleDeSommets* getCliqueMaximale (graphe_l g);
+EnsembleDeSommets getCliqueMaximale (graphe_l g);
 
 /**
   * @fn EnsembleDeSommets getCliqueMaximum (graphe_l g);
