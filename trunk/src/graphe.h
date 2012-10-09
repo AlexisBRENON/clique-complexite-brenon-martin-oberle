@@ -33,15 +33,9 @@ typedef Couple *liste;
   */
 typedef struct
 {
-	liste a[n_max]; /**< Tableau de voisins de chacun des sommets. */
+	liste* a; /**< Tableau de voisins de chacun des sommets. */
 	int n; /**< Nombre de sommets du graphes. */
 } graphe_l;
-
-/**
-  * @typedef EnsembleDeSommets
-  * @brief Représente un ensemble de sommet via une liste chainée
-  */
-typedef liste EnsembleDeSommets;
 
 /**
   * @fn graphe_l* createGraphe(int n);
@@ -107,13 +101,12 @@ l'entrée standard.
 graphe_l* loadFromInput ();
 
 /**
-  * @fn char* toString (graphe_l g);
-  * @brief Retroune une chaine de caractère représentant le graphe.
+  * @fn void dispGraphe (graphe_l g);
+  * @brief Affiche le graphe g
   *
-  * @param g Le graphe à représenter
-  * @return Une chaine de caractère représentative à afficher
+  * @param g Le graphe à afficher
   */
-char* toString (graphe_l g);
+void dispGraphe  (graphe_l g);
 
 /**
   * @fn int existArc(graphe_l g, sommet s1, sommet s2);
@@ -125,15 +118,5 @@ char* toString (graphe_l g);
   * @return 1 si l'arc s1-s2 (ou s2-s1) existe, 1 sinon.
   */
 int existArc (graphe_l g, sommet s1, sommet s2);
-
-/**
-  * @fn int isClique (graphe_l g, EnsembleDeSommets E);
-  * @brief Teste si E est une clique de g.
-  *
-  * @param g Graphe
-  * @param E Ensemble de sommet à tester
-  * @return 1 si E est une clique de g, 0 sinon.
-  */
-int isClique (graphe_l g, EnsembleDeSommets E);
 
 #endif /* __GRAPHE_H__ */
