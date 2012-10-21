@@ -1,16 +1,14 @@
 SRC=$(wildcard *.c)
 OBJ=$(SRC:.cpp=.o)
 
-FLAGS = -Wall -c
-FLEXE = -Wall -o
+CFLAGS = -g
 
-all:pgm
 
-pgm:$(OBJ)
-	gcc $^ $(FLEXE) test
-	
+all:$(OBJ)
+	gcc $^ -o test
+
 %.o:%.cpp
-	gcc $(FLAGS) $<
-	
+	gcc $(CFLAGS) $<
+
 clean :
-	rm -f *.o pgm
+	rm -f *.o

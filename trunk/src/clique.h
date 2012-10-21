@@ -38,6 +38,8 @@ int isMaximale (graphe_l g, EnsembleDeSommets E);
   */
 EnsembleDeSommets getCliqueMaximale (graphe_l g);
 
+EnsembleDeSommets getCliqueMaximaleFromSt(graphe_l g, sommet st);
+
 /**
   * @fn EnsembleDeSommets getCliqueMaximum (graphe_l g);
   * @brief Calcule une clique maximum de g.
@@ -45,6 +47,8 @@ EnsembleDeSommets getCliqueMaximale (graphe_l g);
   * @param g Graphe
   * @return L'ensemble des sommets formant une clique maximum
   */
-EnsembleDeSommets getCliqueMaximum (graphe_l g);
+EnsembleDeSommets getCliqueMaximumInc (graphe_l g);
+
+EnsembleDeSommets getCliqueMaximumFull (graphe_l g);
 
 #endif /* __CLIQUE_H__ */
